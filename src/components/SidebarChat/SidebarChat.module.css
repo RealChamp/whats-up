@@ -1,6 +1,5 @@
 .sidebarChat {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid #f6f6f6;
     padding: 20px;
@@ -15,4 +14,8 @@
 .info > h2 {
     font-size: 1.15rem;
     margin-bottom: 8px;
+}
+
+.info {
+    margin-left: 18px;
 }

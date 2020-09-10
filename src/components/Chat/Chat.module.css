@@ -24,3 +24,41 @@
 .info > p {
     color: gray;
 }
+
+.body {
+    flex: 1;
+    padding: 30px;
+    background-image: url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png');
+    background-repeat: repeat;
+    overflow-y: scroll;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 62px;
+    border-top: 1px solid lightgray;
+}
+
+.footer > form {
+    display: flex;
+    flex: 1;
+}
+
+.footer > form > input {
+    flex: 1;
+    border: none;
+    border-radius: 30px;
+    padding: 10px;
+    outline-width: 0;
+}
+
+.footer > form > button {
+    display: none;
+}
+
+.footer > .MuiSvgIcon-root {
+    padding: 10px;
+    color: gray;
+}

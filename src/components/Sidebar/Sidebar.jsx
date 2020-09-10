@@ -9,7 +9,7 @@ function Sidebar() {
     return (
       <div className={classes.sidebar}>
         <div className={classes.header}>
-          <Avatar src="https://randomuser.me/api/portraits/women/44.jpg" />
+          <Avatar className={classes["MuiAvatar-img"]} src="https://randomuser.me/api/portraits/women/44.jpg" alt='avatar' />
           <div className={classes.userPanel}>
             <IconButton>
               <DonutLarge fontSize="medium" />

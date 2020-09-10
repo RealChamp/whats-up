@@ -11,6 +11,11 @@
     border-left: 1px solid lightgray;
 }
 
+.header > .MuiAvatar-img {
+    width: 50px !important;
+    height: 50px !important;
+} 
+
 .userPanel {
     display: flex;
     align-items: center;
@@ -51,5 +56,6 @@
 .chats {
     flex: 1;
     background-color: #fff;
-    overflow: scroll;
+    overflow-y: scroll;
 }
+ 
