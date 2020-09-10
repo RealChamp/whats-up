@@ -1,0 +1,55 @@
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    flex: 0.35;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    border-left: 1px solid lightgray;
+}
+
+.userPanel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 10vw;
+    /* composes: header; // Добавляет к этому классу свойства класса header */
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    background-color: #f6f6f6;
+    height: 39px;
+    padding: 10px;
+}
+
+.searchContainer {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    width: 100%;
+    height: 35px;
+    border-radius: 20px;
+}
+
+.searchContainer > .MuiSvgIcon-root {
+    color: gray;
+    padding: 10px;
+}
+
+.searchContainer > input {
+    border: none;
+    outline-width: 0;
+    margin-left: 10px;
+    font-size: 1rem;
+}
+
+.chats {
+    flex: 1;
+    background-color: #fff;
+    overflow: scroll;
+}
