@@ -31,10 +31,11 @@ const pusher = new Pusher({
               pusher.trigger('messages', 'inserted', {
                   name: messageDetails.name,
                   message: messageDetails.message,
-                  timestamp: messageDetails.timestamp
+                  timestamp: messageDetails.timestamp,
+                  received: messageDetails.received
               })
           } else {
-              console.log('Error triggering pusher')
+              throw new Error('error triggering pusher')
           }
       })
   })

@@ -4,9 +4,7 @@ import {SearchOutlined, AttachFile, MoreVert, InsertEmoticon, Mic} from '@materi
 import { Avatar, IconButton } from '@material-ui/core'
 import Message from './Message/Message'
 
-console.log(classes)
-
-function Chat() {
+function Chat({ messages }) {
     return (
       <div className={classes.chat}>
         <div className={classes.header}>
@@ -28,9 +26,9 @@ function Chat() {
           </div>
         </div>
         <div className={classes.body}>
-          <Message receiver={true} />
-          <Message />
-          <Message />
+          {messages.map(message =>(
+            <Message key={message._id} message={message}/>
+          ))}
         </div>
         <div className={classes.footer}>
           <IconButton>

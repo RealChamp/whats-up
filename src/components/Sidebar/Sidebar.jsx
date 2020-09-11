@@ -5,7 +5,6 @@ import {Avatar, IconButton} from '@material-ui/core'
 import SidebarChat from '../SidebarChat/SidebarChat'
 
 function Sidebar() {
-    console.log(classes)
     return (
       <div className={classes.sidebar}>
         <div className={classes.header}>
