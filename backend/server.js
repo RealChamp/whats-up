@@ -2,6 +2,8 @@ import express from 'express'
 import mongoose from 'mongoose'
 import Messages from './dbMessages.js'
 import Pusher from 'pusher'
+import Cors from 'cors'
+
 
 // app config
 const app = express()
@@ -19,11 +21,35 @@ const pusher = new Pusher({
 
   db.once('open', () => {
       console.log('db connected')
+
+      const messageCollection = db.collection('messagecontents')
+      const changeStream = messageCollection.watch()
+
+      changeStream.on('change', change => {
+          if (change.operationType === 'insert') {
+              const messageDetails = change.fullDocument
+              pusher.trigger('messages', 'inserted', {
+                  name: messageDetails.name,
+                  message: messageDetails.message,
+                  timestamp: messageDetails.timestamp
+              })
+          } else {
+              console.log('Error triggering pusher')
+          }
+      })
   })
 
-// middleware
+// middlewares
 app.use(express.json())
 
+app.use(Cors())
+
+/* app.use((req,res,next) => {
+    res.setHeader('Access-Control-Allow-Origin', '*')
+    res.setHeader('Access-Control-Allow-Headers', '*')
+    next()
+})
+ */
 // db config
     const connection_url = 'mongodb+srv://admin:W0ZTj9rvC810VROf@cluster0.yimfk.mongodb.net/whatappDB?retryWrites=true&w=majority'
 
